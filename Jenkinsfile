@@ -4,8 +4,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm i'
+                sh 'pwd'
+                sh 'ls'
+                sh 'aws --version'
                 sh 'ng build'
+                sh 'npm install'
             }   
         }
         stage('deploy') {
