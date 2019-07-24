@@ -6,8 +6,8 @@ pipeline {
             steps {
                 sh 'aws --version'
                 sh 'node --version'
-                sh 'ng build'
                 sh 'npm install'
+                sh 'ng build'
             }   
         }
         stage('deploy') {
