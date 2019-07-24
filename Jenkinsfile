@@ -1,6 +1,10 @@
 // test webhook
 pipeline {
     agent { dockerfile true }
+    environment {
+        HOME = '.'
+        npm_config_cache = 'npm-cache'
+    }
     stages {
         stage('build') {
             steps {
