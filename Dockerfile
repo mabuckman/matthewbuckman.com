@@ -8,4 +8,5 @@ RUN apk -v --update add \
         && \
     pip install --upgrade awscli==1.14.5 s3cmd==2.0.1 python-magic && \
     apk -v --purge del py-pip && \
-    rm /var/cache/apk/*
+    rm /var/cache/apk/* && \
+    npm install -g --engine-strict @sonarwhal/sonar --unsafe-perm=true
