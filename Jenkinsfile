@@ -1,11 +1,18 @@
 // test webhook
 pipeline {
-    agent { docker { image 'node:6.3' } }
+    agent { docker { image 'node:10.16-alpine' } }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
-            }
+                sh 'npm i'
+                sh 'ng build'
+            }   
+        }
+        stage('deploy') {
+            steps {
+                sh 'pwd'
+                sh 'aws --version'
+            }   
         }
     }
 } 
