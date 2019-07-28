@@ -8,15 +8,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm -g install'
-                sh 'ng build'
-                sh 'ls'
+                sh 'npm install'
+                sh './node_modules/@angular/cli/bin/ng build'
             }   
         }
         stage('deploy') {
             steps {
-                sh 'pwd'
-                sh 'aws --version'
+                sh 'aws s3 cp ./www s3://www.matthewbuckman.com --acl public-read --recursive' 
             }   
         }
     }
