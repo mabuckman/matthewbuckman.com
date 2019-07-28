@@ -14,7 +14,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'aws s3 cp ./www s3://www.matthewbuckman.com --acl public-read --recursive' 
+                sh 'aws s3 cp ./dist/matthewbuckman s3://www.matthewbuckman.com --acl public-read --recursive' 
             }   
         }
     }
