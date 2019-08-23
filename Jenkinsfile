@@ -9,7 +9,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
-                sh './node_modules/@angular/cli/bin/ng build'
+                sh './node_modules/@angular/cli/bin/ng build --prod'
             }   
         }
         stage('deploy') {
